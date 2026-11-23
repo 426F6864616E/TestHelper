@@ -1,0 +1,274 @@
+{
+  "app": { "tagline": "AI assistant for tests" },
+  "nav": {
+    "scan": "Scanner",
+    "history": "History",
+    "providers": "AI providers",
+    "settings": "Settings",
+    "guide": "Guide",
+    "about": "About"
+  },
+  "status": {
+    "browser_on": "Browser connected",
+    "browser_off": "Browser not running",
+    "keys": "Active keys: {count}",
+    "no_keys": "No API keys"
+  },
+  "scan": {
+    "title": "Scanner",
+    "subtitle": "Open a question in the browser and press “Scan”",
+    "button": "Scan",
+    "scanning": "Analyzing…",
+    "copy": "Copy",
+    "copied": "Copied",
+    "mode": "Mode",
+    "modes": { "auto": "Auto", "text": "Text", "vision": "Screenshot" },
+    "modes_hint": {
+      "auto": "Page text + screenshot — most accurate",
+      "text": "Text only — fastest and cheapest",
+      "vision": "Screenshot only — for images and formulas"
+    },
+    "empty_title": "Ready",
+    "empty_hint": "The result will appear here. In-window hotkey: F8 or Ctrl+Enter",
+    "answer": "Answer",
+    "confidence": "Confidence",
+    "explanation": "Explanation",
+    "question": "Question",
+    "meta": "{provider} · {model} · {elapsed} s",
+    "error_title": "Could not get an answer",
+    "open_browser": "Open browser",
+    "go_providers": "Add a key"
+  },
+  "progress": {
+    "reading_page": "Reading the page…",
+    "launching_browser": "Launching the browser…",
+    "asking_ai": "Sending request to AI…",
+    "asking": "Request: {where}"
+  },
+  "errors": {
+    "no_keys": "No API keys added. Open “AI providers” and add at least one free key.",
+    "empty_page": "The active tab has no text or image.",
+    "all_failed": "All providers are temporarily unavailable or out of quota. Add keys from other providers or try again in a minute.",
+    "no_question": "No test question found on the page.",
+    "browser": {
+      "not_running": "The browser is not running in debug mode. Press “Open browser”.",
+      "no_tab": "No open tab with a page.",
+      "launch_failed": "Failed to launch the browser. Close all Chrome windows and try again.",
+      "not_found": "Chrome, Edge or Brave not found. Set the browser path in settings.",
+      "cdp": "Browser communication error. Reload the page and try again."
+    }
+  },
+  "history": {
+    "title": "History",
+    "subtitle": "Recent scan results",
+    "clear": "Clear",
+    "confirm_clear": "Delete the entire history?",
+    "empty": "Nothing here yet (・_・;)",
+    "copy": "Copy"
+  },
+  "providers": {
+    "title": "AI providers",
+    "subtitle": "Built-in providers are free. You can pick your own models and add any OpenAI-compatible API. The app switches between them automatically when limits run out.",
+    "tip": "Tip: add keys from 2–3 different providers so one limit never stops you. Gemini limits are per Google project, so several keys from one project add no quota.",
+    "get_key": "Get a key ↗",
+    "add": "Add",
+    "placeholder": "Paste API key ({hint})",
+    "test": "Test",
+    "testing": "…",
+    "test_ok": "Key works · models: {count}",
+    "test_fail": "Key failed: {error}",
+    "enabled": "Enabled",
+    "no_keys": "No keys",
+    "stats": "Succeeded: {ok} · Errors: {failed}",
+    "last_model": "Last model: {model}",
+    "key_added": "Key added",
+    "key_exists": "This key already exists",
+    "up": "Higher priority",
+    "down": "Lower priority",
+    "desc": {
+      "gemini": "Best quality, understands images. Free key in Google AI Studio.",
+      "groq": "Very fast with generous free limits; vision-capable models available.",
+      "openrouter": "Dozens of free (:free) models with one key. Great backup.",
+      "mistral": "Free Experiment tier; models understand images.",
+      "cerebras": "Ultra-fast text models with a large daily token budget."
+    },
+    "custom_badge": "custom",
+    "no_key_local": "No key — fine for local models (Ollama, LM Studio)",
+    "models": "Models",
+    "models_hint": "empty — the app picks; yours go first, automatic ones stay as backup",
+    "models_hint_custom": "only these are used, in order; empty — models from the provider's API",
+    "models_auto": "Automatic",
+    "add_model": "Add model",
+    "model_added": "Model {model} added",
+    "model_exists": "This model is already in the list",
+    "delete_title": "Delete provider",
+    "delete_confirm": "Delete \"{name}\" together with its keys?",
+    "preset_other": "Other (custom URL)",
+    "add_provider": "Add your own provider",
+    "show_form": "Open form",
+    "hide_form": "Collapse",
+    "add_provider_hint": "Any OpenAI-compatible API: OpenAI, DeepSeek, xAI, Together, or local Ollama / LM Studio without a key.",
+    "f_preset": "Template",
+    "f_name": "Name",
+    "f_url": "API address",
+    "f_key": "API key",
+    "f_key_hint": "optional for local models",
+    "f_models": "Models",
+    "f_models_hint": "comma-separated, e.g.: gpt-4o-mini, gpt-4o",
+    "f_vision": "Understands images",
+    "f_save": "Add provider",
+    "e_name": "Enter a name",
+    "e_url": "The address must start with http:// or https://",
+    "e_key": "This provider needs an API key",
+    "provider_added": "Provider \"{name}\" added"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Changes are saved automatically",
+    "interface": "Interface",
+    "behavior": "Behavior",
+    "browser": "Browser",
+    "maintenance": "Maintenance",
+    "language": "Language",
+    "theme": "Theme",
+    "themes": { "dark": "Dark", "light": "Light", "system": "System" },
+    "close_to_tray": "Minimize to tray on close",
+    "always_on_top": "Always on top",
+    "notifications": "Answer notifications",
+    "show_explanation": "Show explanation",
+    "auto_launch": "Launch browser automatically",
+    "port": "Debug port",
+    "browser_path": "Browser path",
+    "browser_path_hint": "Empty — auto-detect (Chrome / Edge / Brave)",
+    "browse": "Browse…",
+    "launch_now": "Launch browser",
+    "launched": "Browser launched",
+    "open_logs": "Open logs",
+    "reset_limits": "Reset limit counters",
+    "reset_done": "Counters reset"
+  },
+  "guide": {
+    "title": "Guide",
+    "subtitle": "Three steps to your first answer",
+    "steps": [
+      { "title": "1. Get free keys", "body": "Open “AI providers” and press “Get a key” next to Gemini, Groq or OpenRouter. Sign-up is free, no card required. The more different providers, the more reliable it gets." },
+      { "title": "2. Open the test in the app browser", "body": "Press “Open browser” — a separate Chrome/Edge profile with scanning support starts. Sign in to the test site (logins persist between launches)." },
+      { "title": "3. Scan", "body": "Press “Scan”, F8 or Ctrl+Enter in the app window, or choose “Scan” in the tray menu. The answer appears in the app and in a Windows notification." },
+      { "title": "Modes", "body": "Auto — text + screenshot (most accurate). Text — fastest. Screenshot — when the question is an image or formula." },
+      { "title": "Troubleshooting", "body": "“Browser not running” — close all Chrome windows and press “Open browser”. “Out of quota” — add a key from another provider. Logs: Settings → Open logs." }
+    ]
+  },
+  "about": {
+    "title": "About",
+    "version": "Version {version}",
+    "author": "Developer: {author}",
+    "description": "An AI assistant that analyzes test questions on the open browser page using free Gemini, Groq, OpenRouter, Mistral and Cerebras models with automatic failover.",
+    "open_folder": "Open app folder",
+    "donate": "Buy me a coffee",
+    "donate_hint": "If the app was useful, you can treat the developer to a coffee ☕ in crypto. Thank you! (っ˘ω˘ς )",
+    "donate_note": "Send only the coin shown to its own network, or the funds will be lost.",
+    "copy": "Copy",
+    "copied": "{coin} address copied ✓"
+  },
+  "tray": {
+    "scan": "Scan",
+    "show": "Show window",
+    "exit": "Exit",
+    "idle": "Idle",
+    "processing": "Processing…"
+  },
+  "eggs": {
+    "logo": [
+      "(｡•̀ᴗ-)✧ stop poking me, it tickles",
+      "ʕ•ᴥ•ʔ the checkmark is load-bearing",
+      "(╯°□°)╯︵ ┻━┻ ok, five clicks is a lot",
+      "┬─┬ノ( º _ ºノ) table restored, carry on",
+      "( •_•)>⌐■-■  (⌐■_■)  deal with it"
+    ],
+    "dev_steps": "You are {count} step(s) away from being a developer (・_・)",
+    "dev_done": "No need, you already are one ¯\\_(ツ)_/¯",
+    "night": "(－_－) zzZ  It's late. Maybe go to sleep?",
+    "new_year": "🎄 Happy New Year! ＼(＾▽＾)／",
+    "halloween": "🎃 Boo! Happy Halloween (ʘ言ʘ)",
+    "friday": "It's Friday! ┏(＾0＾)┛┗(＾0＾)┓",
+    "dance": [
+      "Dance break! ヽ(⌐■_■)ノ♪♬",
+      "The menu decided to stretch ♪┏(・o･)┛♪",
+      "Icon workout time ᕕ( ᐛ )ᕗ"
+    ],
+    "taglines": [
+      "powered by vibes ✨",
+      "100% organic tokens",
+      "now with 0% bugs*",
+      "brain.exe loading…",
+      "certified Claude moment ✻",
+      "probably not sentient (・_・)",
+      "*bugs are features",
+      "built at 3 a.m.",
+      "one more coffee, then release"
+    ],
+    "memes": [
+      "Test at 9:00. Started studying at 8:57. Classic (￣▽￣;)",
+      "\"It works on my machine\" is this app's official position ¯\\_(ツ)_/¯",
+      "Gemini, Groq and Mistral walk into a bar. Cerebras already left — it's faster ⚡(•̀ᴗ•́)",
+      "Free tier: when the quota runs out exactly on the hardest question (╥﹏╥)",
+      "When every option looks right and the AI says \"it depends on context\" (ಠ_ಠ)",
+      "The developer promised \"one tiny tweak\". That was three versions ago (¬‿¬)",
+      "The explanation is longer than the question. As intended (•̀ᴗ•́)و",
+      "Stare at option C long enough and it starts staring back (°ロ°)",
+      "This is fine ☕🔥 (ᵔᴥᵔ)   — every deadline",
+      "This meme was merged without code review ( ͡° ͜ʖ ͡°)"
+    ],
+    "ctx": {
+      "last_error": [
+        "The last try failed. Apps have bad mornings too (・_・;)",
+        "An error is just an answer that hasn't made up its mind (ง'̀-'́)ง"
+      ],
+      "low_conf": [
+        "{c}% confident. About as sure as me saying \"5 more minutes\" (ಠ_ಠ)",
+        "{c}% — even AI reads coffee grounds sometimes ☕(・_・)"
+      ],
+      "high_conf": [
+        "{c}% confident. The AI right now: (⌐■_■)",
+        "{c}%! Even weather forecasts aren't this sure (•̀ᴗ•́)و"
+      ],
+      "provider": [
+        "The last answer came from {p}. Say hi ヾ(・ω・)",
+        "{p} is on fire today (ง •̀_•́)ง"
+      ],
+      "many_scans": [
+        "{n} scans this session. \"Just one question\", sure (¬‿¬)",
+        "{n} scans! The scanner is asking for a vacation (－_－)"
+      ],
+      "no_history": [
+        "History is empty. A clean sheet is the best sheet (◕‿◕)"
+      ],
+      "morning": [
+        "Morning. The coffee hasn't kicked in, but the app is ready (ᴗ˳ᴗ)☕"
+      ],
+      "late": [
+        "It's late and you're still here. The app stays up to keep you company (－_－)"
+      ],
+      "monday": [
+        "Monday. Even the AI answers a little slower today (；￣Д￣)"
+      ],
+      "page": {
+        "settings": [
+          "Settings: where people change the theme and leave (¬‿¬)"
+        ],
+        "providers": [
+          "Free API keys — the best kind of free (◕‿◕)"
+        ],
+        "guide": [
+          "You opened the guide. Few people do. Legend (ง'̀-'́)ง"
+        ],
+        "history": [
+          "History remembers everything. Even what's better forgotten (・_・;)"
+        ],
+        "about": [
+          "Yes, the coffee button is real ☕ (っ˘ω˘ς )"
+        ]
+      }
+    }
+  }
+}

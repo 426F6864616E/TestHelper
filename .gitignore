@@ -1,0 +1,32 @@
+# User data (contains API keys!)
+config.json
+history.json
+*.log
+logs/
+browser_profile/
+portable
+_legacy/
+
+# Secrets, just in case
+.env
+.env.*
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Build output
+*.exe
+*.spec
+dist/
+build/
+
+# Editors / tools
+.vscode/
+.idea/
+.claude/
+*.code-workspace
