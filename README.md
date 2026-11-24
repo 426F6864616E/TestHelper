@@ -12,7 +12,7 @@
 ![License](https://img.shields.io/badge/license-MIT-22c55e?style=flat-square)
 ![Languages](https://img.shields.io/badge/UI-EN%20%7C%20UA%20%7C%20RU-f59e0b?style=flat-square)
 
-[**⬇ Download the installer**](../../releases/latest) · [Features](#-features) · [Usage](#-usage) · [Build from source](#-build-from-source)
+[**⬇ Download the installer**](../../releases/latest) · [**🌐 Website**](https://426f6864616e.github.io/TestHelper/) · [Features](#-features) · [Usage](#-usage) · [Build from source](#-build-from-source)
 
 <img src="docs/screenshot.png" width="820" alt="TestHelper main window">
 
