@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TestHelper: free AI study helper for Windows</title>
+<meta name="description" content="TestHelper is a free Windows app that reads the quiz or test question in your browser and shows the answer, a confidence score and an explanation. Works with 5 free AI providers: Gemini, Groq, OpenRouter, Mistral, Cerebras.">
+<meta name="keywords" content="AI quiz helper, AI study tool, test answer AI, quiz solver, Gemini, Groq, OpenRouter, Windows app, free AI">
+<link rel="canonical" href="https://426f6864616e.github.io/TestHelper/">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TestHelper: free AI study helper for Windows">
+<meta property="og:description" content="Reads the question in your browser and shows the answer, confidence and explanation. 5 free AI providers with automatic failover.">
+<meta property="og:url" content="https://426f6864616e.github.io/TestHelper/">
+<meta property="og:image" content="https://426f6864616e.github.io/TestHelper/social-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://426f6864616e.github.io/TestHelper/social-preview.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "TestHelper",
+  "operatingSystem": "Windows 10, Windows 11",
+  "applicationCategory": "EducationalApplication",
+  "softwareVersion": "1.0",
+  "description": "Free Windows AI assistant that reads the test question from your browser tab and shows the answer, a confidence score and a short explanation.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "downloadUrl": "https://github.com/426F6864616E/TestHelper/releases/latest",
+  "license": "https://opensource.org/licenses/MIT",
+  "image": "https://426f6864616e.github.io/TestHelper/social-preview.png"
+}
+</script>
+<style>
+  :root {
+    --bg: #0e0d18; --bg2: #161526; --card: #1b1a2c; --line: #2c2a44;
+    --ink: #f1f0fa; --muted: #a9a7c4; --accent: #7c5cff; --accent2: #9b86ff;
+    --green: #22c55e; --amber: #f5a623;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 "Segoe UI", system-ui, -apple-system, sans-serif; }
+  img { max-width: 100%; height: auto; display: block; }
+  .hero .wrap > *, .pair > *, .grid > *, .steps > * { min-width: 0; }
+  h1 { overflow-wrap: anywhere; }
+  a { color: var(--accent2); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+
+  nav { position: sticky; top: 0; z-index: 5; background: rgba(14,13,24,.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 12px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .brand img { width: 30px; height: 30px; }
+  .links { display: flex; gap: 20px; font-size: 15px; }
+  .links a { color: var(--muted); text-decoration: none; }
+  .links a:hover { color: var(--ink); }
+
+  .hero { background: radial-gradient(900px 500px at 15% -10%, rgba(124,92,255,.35), transparent 70%); padding: 72px 0 56px; }
+  .hero .wrap { display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; align-items: center; }
+  h1 { font-size: clamp(36px, 6vw, 56px); line-height: 1.08; margin: 0 0 18px; letter-spacing: -.02em; }
+  h1 span { background: linear-gradient(90deg, var(--accent2), #c4b5fd); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lead { color: var(--muted); font-size: 19px; margin: 0 0 28px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 12px; font-weight: 600; text-decoration: none; font-size: 16px; }
+  .btn.primary { background: var(--accent); color: #fff; box-shadow: 0 8px 28px rgba(124,92,255,.35); }
+  .btn.primary:hover { background: #6b4cf0; }
+  .btn.ghost { border: 1px solid var(--line); color: var(--ink); background: var(--bg2); }
+  .meta { margin-top: 14px; color: var(--muted); font-size: 14px; }
+  .shot { border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.55); }
+
+  section { padding: 64px 0; }
+  h2 { font-size: clamp(26px, 4vw, 34px); margin: 0 0 10px; letter-spacing: -.01em; }
+  .sub { color: var(--muted); margin: 0 0 32px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+  .card h3 { margin: 0 0 6px; font-size: 18px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  .ico { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; font-size: 20px; margin-bottom: 12px; background: rgba(124,92,255,.15); }
+
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+  .pair figure { margin: 0; }
+  .pair figcaption { color: var(--muted); font-size: 14px; margin-top: 10px; text-align: center; }
+  .result { margin-top: 22px; padding: 16px 20px; border-left: 3px solid var(--green); background: var(--card); border-radius: 10px; color: var(--muted); }
+  .result b { color: var(--ink); }
+
+  .steps { counter-reset: s; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .step { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+  .step::before { counter-increment: s; content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--accent); font-weight: 700; margin-bottom: 12px; }
+  .step h3 { margin: 0 0 6px; font-size: 18px; }
+  .step p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  .providers { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill { padding: 8px 14px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); font-size: 15px; }
+
+  .note { background: var(--bg2); border: 1px solid var(--line); border-radius: 16px; padding: 22px; color: var(--muted); }
+  footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+  @media (max-width: 860px) {
+    .hero .wrap, .pair { grid-template-columns: 1fr; }
+    .grid, .steps { grid-template-columns: 1fr; }
+    .links { display: none; }
+    .hero { padding: 40px 0; }
+    section { padding: 44px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#"><img src="favicon.png" alt="">TestHelper</a>
+    <div class="links">
+      <a href="#features">Features</a>
+      <a href="#example">Example</a>
+      <a href="#tray">Tray</a>
+      <a href="#start">Get started</a>
+      <a href="https://github.com/426F6864616E/TestHelper">GitHub</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Your <span>AI study helper</span> for any quiz in the browser</h1>
+      <p class="lead">TestHelper reads the question on your screen and shows the answer, how confident the AI is, and a short explanation, in about two seconds.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/426F6864616E/TestHelper/releases/latest">⬇ Download for Windows</a>
+        <a class="btn ghost" href="https://github.com/426F6864616E/TestHelper">★ Star on GitHub</a>
+      </div>
+      <div class="meta">Free & open source (MIT) · Windows 10 / 11 · no admin rights needed</div>
+    </div>
+    <img class="shot" src="screenshot-result.png" alt="TestHelper showing answer B, Jupiter, with 100% confidence and an explanation" width="1404" height="965">
+  </div>
+</header>
+
+<section id="features">
+  <div class="wrap">
+    <h2>Everything you need, nothing you don't</h2>
+    <p class="sub">A small, fast desktop app that works with the browser you already have.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">⚡</div><h3>One-click scan</h3><p>Press Scan or F8. The app reads the page text and a screenshot of the active tab.</p></div>
+      <div class="card"><div class="ico">🧠</div><h3>Answer + explanation</h3><p>See the chosen option, a confidence score and why it's right, so you actually learn.</p></div>
+      <div class="card"><div class="ico">🆓</div><h3>5 free AI providers</h3><p>Gemini, Groq, OpenRouter, Mistral and Cerebras. Bring your own free API keys.</p></div>
+      <div class="card"><div class="ico">🔁</div><h3>Automatic failover</h3><p>Hit a rate limit? The request quietly moves to the next key, model or provider.</p></div>
+      <div class="card"><div class="ico">🖼️</div><h3>Images & formulas</h3><p>Screenshot mode handles questions with pictures, charts and math.</p></div>
+      <div class="card"><div class="ico">🔒</div><h3>Private by design</h3><p>Keys and history stay on your PC. No telemetry, no accounts, no servers of ours.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="example" style="background: var(--bg2);">
+  <div class="wrap">
+    <h2>A real scan, start to finish</h2>
+    <p class="sub">The demo quiz below ships with the repo, so you can try exactly this.</p>
+    <div class="pair">
+      <figure><img class="shot" src="demo-quiz.png" alt="Demo quiz: which planet has the shortest day?" width="1100" height="640" loading="lazy"><figcaption>1. The question in the browser</figcaption></figure>
+      <figure><img class="shot" src="screenshot-result.png" alt="TestHelper result: B, Jupiter" width="1404" height="965" loading="lazy"><figcaption>2. TestHelper's answer</figcaption></figure>
+    </div>
+    <div class="result"><b>B: Jupiter</b> · 100% confidence · Gemini 2.5 Flash · <b>~2 seconds</b></div>
+  </div>
+</section>
+
+<section id="tray">
+  <div class="wrap">
+    <h2>Lives quietly in the system tray</h2>
+    <p class="sub">Close the window and keep going: left-click the tray icon to scan, hover it to read the answer.</p>
+    <img src="tray-states.png" alt="Tray icon states: idle, scanning, answer ready, error" width="1320" height="400" loading="lazy" style="border-radius:16px;">
+  </div>
+</section>
+
+<section id="start" style="background: var(--bg2);">
+  <div class="wrap">
+    <h2>Get started in a minute</h2>
+    <p class="sub">No credit card, no sign-up with us. Just a free key from any AI provider.</p>
+    <div class="steps">
+      <div class="step"><h3>Install</h3><p>Download <a href="https://github.com/426F6864616E/TestHelper/releases/latest">TestHelper-1.0-Setup.exe</a> and run it. The installer follows your Windows language.</p></div>
+      <div class="step"><h3>Add a free key</h3><p>Open <b>AI providers</b> and paste a key from <a href="https://aistudio.google.com/app/apikey">Gemini</a>, <a href="https://console.groq.com/keys">Groq</a> or any other provider.</p></div>
+      <div class="step"><h3>Scan</h3><p>Click <b>Launch browser</b>, open your quiz and press <b>Scan</b> or <b>F8</b>.</p></div>
+    </div>
+    <p class="sub" style="margin:28px 0 12px;">Works with:</p>
+    <div class="providers">
+      <span class="pill">Google Gemini</span><span class="pill">Groq</span><span class="pill">OpenRouter</span><span class="pill">Mistral</span><span class="pill">Cerebras</span><span class="pill">Any OpenAI-compatible API</span><span class="pill">Ollama / LM Studio (local)</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="note"><b style="color:var(--ink)">Use it responsibly.</b> TestHelper is meant as a study aid: to check yourself and learn from the explanation. Don't use it where the rules forbid it (exams, certifications). AI answers can be wrong.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>TestHelper 1.0 · MIT License</span>
+    <a href="https://github.com/426F6864616E/TestHelper">github.com/426F6864616E/TestHelper</a>
+  </div>
+</footer>
+
+</body>
+</html>
