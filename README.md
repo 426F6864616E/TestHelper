@@ -58,6 +58,39 @@ and falls back to English for any other language.
    that the app can talk to.
 3. Open the page with the question in it and click **Scan** (or press **F8**).
 
+### Example: a real scan
+
+A real run on the bundled demo page [`docs/demo-quiz.html`](docs/demo-quiz.html): open it in the
+browser TestHelper launched and scan it yourself.
+
+<table>
+<tr>
+<td width="50%" align="center"><b>1. The question in the browser</b></td>
+<td width="50%" align="center"><b>2. TestHelper's answer</b></td>
+</tr>
+<tr>
+<td><img src="docs/demo-quiz.png" alt="Demo quiz page"></td>
+<td><img src="docs/screenshot-result.png" alt="Scan result: B — Jupiter, 100% confidence"></td>
+</tr>
+</table>
+
+Answer **B — Jupiter** with **100%** confidence and a short explanation, from Gemini 2.5 Flash
+in **~2 seconds**. Gemini is used here because its key is first in the list. Any provider works.
+
+## 🖥 Works from the system tray
+
+You don't have to keep the window open. Close it with **✕** and TestHelper keeps running in the tray:
+
+- **Left-click** the tray icon to **scan** the current browser tab, and the window stays hidden.
+- **Hover** the icon to read the answer, e.g. `TestHelper: B — Jupiter`.
+- A **Windows notification** shows the answer too (if notifications are enabled and *Do not disturb* is off).
+- **Right-click** opens the menu: **Scan** · **Show window** · **Exit**.
+- The icon color shows what's going on and returns to purple when you open the window or after 90 seconds:
+
+<div align="center">
+<img src="docs/tray-states.png" alt="Tray icon states: idle, scanning, answer ready, error" width="900">
+</div>
+
 ### Free API keys
 
 | Provider   | Get a key                                                      | Notes                              |

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo quiz · Astronomy basics</title>
+<style>
+  :root { --bg:#f5f6fb; --card:#fff; --ink:#1d2033; --muted:#6b7086; --accent:#6d5df5; --line:#e4e6f0; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 "Segoe UI", system-ui, sans-serif; }
+  header { background:var(--accent); color:#fff; padding:18px 32px; display:flex; justify-content:space-between; align-items:center; }
+  header b { font-size:18px; } header span { opacity:.85; font-size:14px; }
+  main { max-width:720px; margin:40px auto; padding:0 16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:28px 32px; box-shadow:0 6px 20px rgba(30,30,80,.06); }
+  .q-num { color:var(--muted); font-size:14px; margin-bottom:6px; }
+  h1 { font-size:22px; margin:0 0 20px; }
+  label { display:flex; gap:12px; align-items:center; padding:12px 16px; border:1px solid var(--line); border-radius:10px; margin-bottom:10px; cursor:pointer; }
+  label:hover { border-color:var(--accent); }
+  input { accent-color:var(--accent); width:18px; height:18px; }
+  .bar { height:6px; background:var(--line); border-radius:3px; margin:0 0 22px; overflow:hidden; }
+  .bar i { display:block; height:100%; width:30%; background:var(--accent); }
+  button { margin-top:12px; background:var(--accent); color:#fff; border:0; border-radius:10px; padding:11px 22px; font-size:15px; cursor:pointer; }
+</style>
+</head>
+<body>
+<header><b>Astronomy basics</b><span>Demo quiz for TestHelper</span></header>
+<main>
+  <div class="card">
+    <div class="q-num">Question 3 of 10</div>
+    <div class="bar"><i></i></div>
+    <h1>Which planet in our Solar System has the shortest day (fastest rotation)?</h1>
+    <form>
+      <label><input type="radio" name="q"> A) Earth</label>
+      <label><input type="radio" name="q"> B) Jupiter</label>
+      <label><input type="radio" name="q"> C) Mercury</label>
+      <label><input type="radio" name="q"> D) Venus</label>
+      <button type="button">Next question →</button>
+    </form>
+  </div>
+</main>
+</body>
+</html>
